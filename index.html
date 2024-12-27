@@ -3,21 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Page</title>
+    <title>Video Downloader</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; }
+        input[type="text"] { width: 100%; padding: 10px; margin: 10px 0; }
+        button { padding: 10px 15px; }
+    </style>
 </head>
 <body>
-    <h1>test</h1>
+    <h1>Video Downloader</h1>
+    <h2>YouTube</h2>
+    <input type="text" id="youtubeUrl" placeholder="Paste YouTube Video URL here" />
+    <button onclick="fetchYouTubeVideo()">Fetch YouTube Video</button>
+
+    <h2>Instagram</h2>
+    <input type="text" id="instagramUrl" placeholder="Paste Instagram Video URL here" />
+    <button onclick="fetchInstagramVideo()">Fetch Instagram Video</button>
+
+    <div id="result"></div>
+
+    <script>
+        async function fetchYouTubeVideo() {
+            const url = document.getElementById('youtubeUrl').value;
+            document.getElementById('result').innerHTML = `YouTube video download link would be processed for: ${url}`;
+            // Here you would typically call an API to fetch the download link.
+            // For example: const response = await fetch('YOUR_API_URL', { method: 'POST', body: JSON.stringify({ url }) });
+            // Handle the response appropriately here.
+        }
+
+        async function fetchInstagramVideo() {
+            const url = document.getElementById('instagramUrl').value;
+            document.getElementById('result').innerHTML = `Instagram video download link would be processed for: ${url}`;
+            // Similar to YouTube, call an API to fetch the download link.
+        }
+    </script>
 </body>
 </html>
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agentdodger</title>
-  
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="My GitHub Project">
-  <meta property="og:description" content="A simple project hosted on GitHub Pages.">
-  <meta property="og:image" content="https://i.postimg.cc/MTvnYQMV/image-removebg-preview-1.png"> <!-- Optional: Add an image URL -->
-  <meta property="og:url" content="https://agentdodger.github.io/home">
-</head>
